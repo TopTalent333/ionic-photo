@@ -1,0 +1,42 @@
+<ion-header class="about-header">
+	<ion-navbar color="white" class="title-centered">
+		<button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+		<ion-title>
+			<img class="header-icon" src="assets/images/icon.png">
+			<span class="header-title">Over ons</span>
+		</ion-title>
+		<ion-buttons end *ngIf="cart.getOrderlines().length > 0">
+			<button ion-button icon-only (click)="navigateToCart()"><ion-icon name="md-cart"></ion-icon><ion-badge color="secondary">{{ cart.getOrderlines().length }}</ion-badge>
+      </button>
+		</ion-buttons>
+	</ion-navbar>
+</ion-header>
+
+
+<ion-content class="about-content">
+	<div class="header">
+		<img src="assets/images/about.jpg">
+	</div>
+	<div padding>
+		Zit je smartphone of tablet vol met mooie, grappige of bijzondere foto’s en vind je het zonde om ze alleen te bij een bericht
+		op Facebook te plaatsen of te versturen via WhatsApp? Dat vinden wij ook! Je mooiste, grappigste en dierbaarste foto’s
+		horen thuis in een lijst op je bureau of aan de muur.
+
+		<br><br>Je maakt er een canvas van of je geeft ze cadeau. Om je foto's simpel, snel en in de beste kwaliteit af te laten
+		drukken, heb je maar één ding nodig. Dat is de app van Sprintphoto Camera & Photo Services: Fotosimpel!
+
+		<br><br>Sprintphoto Camera & Photo Services. <br>Al bijna 100 jaar een begrip in de wereld van fotografie. Opgericht in
+		1919 en dé fotospeciaalzaak voor je foto- en videoapparatuur. Met 8 vestigingen de grootste fotospecialist van Zuidwest-Nederland.
+		Voor meer informatie: <a (click)="openUrl('http://www.sprintphoto.nl/')">www.sprintphoto.nl</a>
+	</div>
+</ion-content>
+
+<ion-footer class="about-footer">
+	<ion-toolbar>
+		<ion-list>
+			Versie {{version}}
+		</ion-list>
+	</ion-toolbar>
+</ion-footer>

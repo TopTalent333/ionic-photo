@@ -1,0 +1,43 @@
+<ion-header class="print-header">
+    <ion-navbar color="white" class="title-centered">
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>
+            <img class="header-icon" src="assets/images/icon.png">
+            <span class="header-title">Print</span>
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content padding class="print-content">
+    <div class="print-summary">
+        <h3>{{ selection.product.variation.title }} - {{ selection.product.variation.height }} x {{ selection.product.variation.width}}cm</h3>
+        <span>Zo komt je foto eruit te zien. Kies het gewenste aantal en bewerk eventueel je foto.</span>
+    </div>
+    <div class="image-container">
+        <div [class]="getOrientation(image) + ' image-item'" *ngFor="let image of selection.images; let i = index">
+            <ion-card>
+                <div [class]="getOrientation(image) + ' image'" *ngIf="image.modified" [ngStyle]="{'background-image': 'url(' + image.modified  + ')'}"></div>
+                <div [class]="getOrientation(image) + ' image'" *ngIf="!image.modified" [ngStyle]="{'background-image': 'url(' + image.thumb  + ')'}"></div>
+                <ion-card-content>
+                    <button ion-button clear color="dark" [disabled]="image.quantity === 1" (click)="decreaseQuantity(image)">
+                        <ion-icon name="remove"></ion-icon>
+                    </button>
+                    <span class="quantity">{{ image.quantity }}</span>
+                    <button ion-button clear color="dark" (click)="increaseQuantity(image)">
+                        <ion-icon name="add"></ion-icon>
+                    </button>
+                    <button *ngIf="image.modified" ion-button clear color="dark" (click)="revertToOriginal(image)">
+                        <ion-icon name="undo"></ion-icon>
+                    </button>
+                </ion-card-content>
+            </ion-card>
+        </div>
+    </div>
+</ion-content>
+
+<ion-footer class="print-footer">
+    <button ion-button full color="secondary" *ngIf="selection.operation === operationEnum.create" (click)="addToCart()">Voeg toe</button>
+    <button ion-button full color="secondary" *ngIf="selection.operation === operationEnum.edit" (click)="saveEdit()">Opslaan</button>
+</ion-footer>

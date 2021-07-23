@@ -1,0 +1,21 @@
+<ion-content class="member-gets-member-modal-content">
+	<div class="modal-dismiss">
+		<button ion-button icon-only clear (click)="dismiss()">
+			<ion-icon name="close-circle"></ion-icon>
+		</button>
+	</div>
+
+	<div class="share-info">
+		<h3>Nodig je vrienden uit</h3>
+		Geef je vrienden €5 op hun eerste aankoop en verdien €5 wanneer zij hebben besteld!
+	</div>
+
+	<div class="share-buttons" *ngIf="canShare">
+		<button ion-button block icon-left class="share-email" *ngIf="canShareEmail" (click)="shareEmail()"><ion-icon name="mail"></ion-icon>E-mail</button>
+		<button ion-button block icon-left class="share-whatsapp" *ngIf="canShareWhatsApp" (click)="shareWhatsApp()"><ion-icon name="logo-whatsapp"></ion-icon>WhatsApp</button>
+	</div>
+
+	<div *ngIf="!canShare" class="cant-share">
+		Er zijn momenteel geen mogelijkheden om mee te delen.
+	</div>
+</ion-content>

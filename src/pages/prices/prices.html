@@ -1,0 +1,91 @@
+<ion-header class="prices-header">
+	<ion-navbar color="white" class="title-centered">
+		<button ion-button menuToggle>
+      		<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>
+			<img class="header-icon" src="assets/images/icon.png">
+			<span class="header-title">Prijzen</span>
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="prices-content">
+	<ion-toolbar>
+		<ion-title>Prints</ion-title>
+	</ion-toolbar>
+	<div class="table-container">
+		<table>
+			<thead>
+				<tr>
+					<th class="title">Type</th>
+					<th class="format">Formaat</th>
+					<th class="price">Prijs <br>p/stk</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let variation of prints">
+					<td class="title" width="200">{{variation.title}}</td>
+					<td class="format" width="100">{{variation.height}}x{{variation.width}}</td>
+					<td class="price" width="100">{{util.formatPrice(variation.price)}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<ion-toolbar>
+		<ion-title>Canvas</ion-title>
+	</ion-toolbar>
+	<div class="table-container">
+		<table>
+			<thead>
+				<tr>
+					<th class="title">Type</th>
+					<th class="format">Formaat</th>
+					<th class="price">Prijs <br>p/stk</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let variation of canvas">
+					<td class="title" width="200">{{variation.title}}</td>
+					<td class="format" width="100">{{variation.height}}x{{variation.width}}</td>
+					<td class="price" width="100">{{util.formatPrice(variation.price)}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<ion-toolbar>
+		<ion-title>Posters</ion-title>
+	</ion-toolbar>
+	<div class="table-container">
+		<table>
+			<thead>
+				<tr>
+					<th class="title">Type</th>
+					<th class="format">Formaat</th>
+					<th class="price">Prijs <br>p/stk</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr *ngFor="let variation of posters">
+					<td class="title" width="200">{{variation.title}}</td>
+					<td class="format" width="100">{{variation.height}}x{{variation.width}}</td>
+					<td class="price" width="100">{{util.formatPrice(variation.price)}}</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<ion-toolbar>
+		<ion-title>Verzendkosten</ion-title>
+	</ion-toolbar>
+	<div class="notice">
+		<p>
+			Bij brievenbuspost met een orderbedrag lager dan <strong>€ {{freeShippingFrom}},-</strong> berekenen wij <strong>€ {{letterShippingCosts.toString().replace('.', ',')}}</strong>			verzendkosten. Voor pakketpost berekenen we <strong>€ {{packageShippingCosts.toString().replace('.', ',')}}</strong> verzendkosten.
+		</p>
+		<hr />
+		<p>
+			{{ shippingText }}
+		</p>
+		<hr />
+		<p class="disclosure">Afhankelijk van de verhoudingen van de originele foto kan het uiteindelijke formaat afwijken.</p>
+	</div>
+</ion-content>

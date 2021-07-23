@@ -1,0 +1,53 @@
+<ion-header class="cart-header">
+	<ion-navbar color="white" class="title-centered">
+		<button ion-button menuToggle>
+      		<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>
+			<img class="header-icon" src="assets/images/icon.png">
+			<span class="header-title">Winkelwagen</span>
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="cart-content">
+	<img src="assets/images/cart.jpg" alt="Cart image not found" />
+	<div class="cart-summary">
+		<h3>Je bestelling</h3>
+		<span>Hieronder zie je een overzicht van je bestellingen. Klopt alles? In de volgende stap kun je je gegevens invullen en betalen. Het is ook mogelijk om de bestelling nog aan te passen voordat je verdergaat. We wensen je alvast veel plezier van je bestelling.</span>
+	</div>
+	<ion-list>
+		<ion-item *ngFor="let orderline of cartService.getOrderlines(); let i = index" (click)="edit(orderline,i)">
+			<div item-left *ngIf="!orderline.image?.modified && !orderline.product.variation.image" class="thumbnail" [ngStyle]="{'background-image': 'url(' + orderline.image.thumb  + ')' }"></div>
+			<div item-left *ngIf="orderline.image?.modified && !orderline.product.variation.image" class="thumbnail" [ngStyle]="{'background-image': 'url(' + orderline.image.modified  + ')' }"></div>
+			<div item-left *ngIf="orderline.product.variation.image" class="thumbnail" [ngStyle]="{'background-image': 'url(' + orderline.product.variation.image  + ')' }"></div>
+			<h2>{{ orderline.quantity }} x {{ orderline.product.name }}</h2>
+			<p>{{ orderline.product.variation.title }} {{ orderline.product.variation.height }} x {{ orderline.product.variation.width
+				}}cm
+			</p>
+			<p>Aanpassen
+				<ion-icon name="arrow-forward"></ion-icon>
+			</p>
+
+			<p item-right>{{ util.formatPrice(orderline.quantity * orderline.product.variation.price) }}</p>
+			<button ion-button clear icon-only item-right color="primary" (tap)="delete(orderline)">
+				<ion-icon name="trash"></ion-icon>
+			</button>
+		</ion-item>
+	</ion-list>
+	<p class="total-price" *ngIf="cartService.getOrderlines().length < 1">Er zitten nog geen producten in uw winkelwagen</p>
+</ion-content>
+<ion-footer class="cart-footer">
+	<ion-row>
+		<ion-col width-50>
+			<button ion-button full color="primary" class="add-button" (click)="addOrderline()">
+                <ion-icon name="add"></ion-icon>&nbsp;&nbsp;Voeg toe
+			</button>
+		</ion-col>
+		<ion-col width-50>
+			<button ion-button full color="secondary" (click)="checkout()" [disabled]="cartService.getOrderlines().length < 1">
+				Afrekenen &nbsp; (&nbsp;{{util.formatPrice(subtotal)}}&nbsp;)
+			</button>
+		</ion-col>
+	</ion-row>
+</ion-footer>

@@ -1,0 +1,31 @@
+<ion-menu [content]="content" class="menu" (ionOpen)="onMenuOpening()">
+  <ion-header>
+    <ion-toolbar color="secondary">
+      <div class="image">
+        <img src="assets/images/menu-header.png">
+      </div>
+      <div class="text">
+        <div class="greeting">Hallo {{userProfile?.firstname}}</div>
+        <div class="welcome">Welkom bij Fotosimpel</div>
+      </div>
+    </ion-toolbar>
+    <div class="credits">
+      <span *ngIf="userProfile">Tegoed: {{util.formatPrice(userProfile.credits)}}</span>
+      <span *ngIf="!userProfile">Tegoed: {{util.formatPrice(0)}}</span>
+    </div>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <button menuClose ion-item class="colored-button" (click)="openCreditInfo()">
+        <ion-icon name="md-cash"></ion-icon>Vertel een vriend & verdien
+      </button>
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+<!-- <div class="connectivityBanner" *ngIf="!networkService.connected"><i>Geen internet verbinding</i></div> -->
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

@@ -1,0 +1,177 @@
+.checkout-header {
+    background: transparent;
+
+    &:after {        
+        background-image: none !important;
+    }
+
+    ion-navbar {
+        height: 58px;
+
+        .toolbar-background {
+            background: transparent;
+            border: none;
+        }
+    }
+
+    .header-icon {
+        height: 50px;
+    }
+
+    .header-title {
+        display: inline-block;
+        font-weight: 400;
+        font-size: 14px;
+        position: relative;
+        top: -19px;
+    }
+}
+
+.checkout-content {
+    .delivery-time {
+        font-size: 10pt;
+    }
+
+    .total-price {
+        .before {
+            margin-right: 20px;
+            color:#a91422;
+            text-decoration: line-through;
+        }
+
+        .discount {
+            color: green;
+        }
+    }
+
+    .list-md {
+        margin: -1px 0 32px 0;
+    }
+
+    .order-summary  {
+        padding: 10px;
+        width: 100%;
+
+        .price {
+            text-align: right;
+        }
+
+        .amount {
+            text-align: right;
+        }
+
+        .format {
+            text-align: right;
+        }
+
+        .name {
+            text-align: left;
+        }
+
+        thead {
+            tr {
+                th  {
+                    font-weight: 300;
+                    padding-bottom: 10px;
+                }
+            }
+        }
+
+        tr {
+
+            td {
+                padding: 5px 0;
+                font-size: 13px;
+            }
+        }
+    }
+
+        .credit-info {
+            background-color: #d4d4d4;
+            text-align: center;
+            color: white;
+            font-size: 12px;
+            padding: 10px;
+            margin-top: 2px;
+
+            ion-label {
+
+            }
+        }
+
+        .voucher-notice {
+            font-size: 12px;
+
+            a {
+                color: #a91422 !important;
+                text-decoration: underline;
+            }
+        }
+        
+        .shippingcosts {
+            margin: 9px 0px 9px 0;
+        }
+
+        .strikethrough {
+            text-decoration: line-through;
+            color: green;
+        }
+
+    .code {
+        color:white;
+        background-color: #d4d4d4;
+
+        .delete {
+            background: transparent;
+            color:white;
+
+            ion-icon {
+                font-size: 18px;
+                margin-left: 20px;
+                position: relative;
+                top: 1px;
+            }
+        }
+
+        ion-label {
+            color: white !important;
+            margin: 0;
+        }
+    }
+
+    .voucher {
+        .item-inner {
+            border: none;
+        }
+        ion-label {
+            color: #a7a7a7 !important;
+            margin: 0;
+        }
+    }
+    
+    .edit {
+        padding: 10px 10px 10px 15px;
+        line-height: 20px;
+        color: black;
+        ion-label {
+            margin: 0;
+            color: black;
+        }
+    }
+
+    .list-header-ios, .list-header-md {
+            background: #a91422 !important;
+            color:white;
+            text-transform: uppercase;
+            font-weight: 500;
+            font-size: 12px;
+    }
+}
+
+.checkout-footer {
+    button {
+        height: 50px;
+        margin: 0;
+        background: #3f773f;
+    }
+}

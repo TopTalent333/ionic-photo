@@ -1,0 +1,72 @@
+.home-header {
+    background: transparent;
+
+    &:after {        
+        background-image: none !important;
+    }
+
+    ion-navbar {
+        height: 58px;
+        box-shadow: -8px -4px 39px 30px #FFFFFF;
+        -webkit-box-shadow: -8px -4px 39px 30px #FFFFFF;
+        -moz-box-shadow: -8px -4px 39px 30px #FFFFFF;
+
+        .toolbar-background {
+            background: transparent;
+            border: none;
+        }
+    }
+
+    .header-icon {
+        height: 50px;
+    }
+
+    .header-title {
+        display: inline-block;
+        font-weight: 400;
+        font-size: 14px;
+        position: relative;
+        top: -19px;
+    }
+}
+
+.home-content{
+
+    button {
+        height: 21.7%;
+        border-top : 10px solid white;
+        margin-top: 0;
+        margin-bottom: 0;
+        background-size: cover;
+        background-position:center center;
+        background-repeat: no-repeat;
+
+        &.print-button {         
+            // background-image: url('assets/images/foto-prints.jpg');  
+        }
+
+        &.canvas-button {
+            // background-image: url('assets/images/canvas-prints.jpg');  
+        }
+
+        .text {
+            text-transform: uppercase;
+            color: white;
+            padding: 10px 10px;
+            font-weight: 500;
+            border-radius: 3px;
+            min-width: 80%;
+            background-color: #a91422
+        }
+    }
+
+    ion-slides {
+        height: 33.33%;
+
+        ion-slide {
+            background-size: cover;
+            background-position:center center;
+            background-repeat: no-repeat;
+        }
+    }
+}

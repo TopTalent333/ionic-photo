@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+  <string name="multi_app_name">MultiImageChooser</string>
+  <string name="free_version_label">Free version - Images left: %d</string>
+  <string name="error_database">Er was een probleem tijdens het ophalen van de media bestanden, Geef dit probleem a.u.b. door aan de ontwikkelaar.</string>
+  <string name="requesting_thumbnails">Ophalen van de thumnails, een ogenblik geduld...</string>
+  <string name="discard">Annuleren</string>
+  <string name="done">OK</string>
+  <string name="video">Video</string>
+  <string name="refreshing">Verversen.</string>
+
+  <string name="image">Albums</string>
+  <string name="images_tab">Images</string>
+  <string name="videos_tab">Videos</string>
+  <string name="max_limit_reach_error">Max limit 10 file</string>
+  <string name="max_limit_file">Limiet van</string>
+  <string name="please_wait_text">Even geduld a.u.b.</string>
+  <string name="file_size_exceeded">De bestandsgrootte overschrijdt de maximum van </string>
+  <string name="selected_file_size">Selected media size is : </string>
+  <string name="mb">MB</string>
+  <string name="please_select_file">Selecteer een bestand.</string>
+  <string name="file">file.</string>
+  <string name="files">bestanden is bereikt.</string>
+  <string name="no_media_file_available">Geen media bestanden beschikbaar.</string>
+
+  <string name="processing_images_title">Een moment geduld</string>
+  <string name="processing_images_message">De afbeeldingen worden geladen...</string>
+</resources>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:layout_height="fill_parent"
+              android:layout_width="fill_parent"
+              android:orientation="vertical" > <!-- android:background="@drawable/image_bg" -->
+
+    <GridView
+            android:id="@+id/gridViewFromMediaChooser"
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:columnWidth="0dip"
+            android:fadingEdgeLength="10dip"
+            android:fastScrollEnabled="true"
+            android:gravity="center"
+            android:horizontalSpacing="2dip"
+            android:numColumns="3"
+            android:requiresFadingEdge="vertical"
+            android:scrollingCache="true"
+            android:stretchMode="columnWidth"
+            android:verticalSpacing="2dip" />
+
+</LinearLayout>
+<!--
+<?xml version="1.0" encoding="utf-8"?>
+<GridView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/gridViewFromMediaChooser"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:cacheColorHint="#00000000"
+    android:choiceMode="multipleChoice"
+    android:columnWidth="100dp"
+    android:drawSelectorOnTop="false"
+    android:gravity="center"
+    android:horizontalSpacing="8dip"
+          android:fadingEdgeLength="10dip"
+          android:scrollingCache="true"
+    android:numColumns="3"
+    android:stretchMode="columnWidth"
+    android:verticalSpacing="8dip" >
+
+</GridView>-->

@@ -1,0 +1,36 @@
+.member-gets-member-modal-content {
+	background: rgba(0, 0, 0, 0.85);
+
+	.modal-dismiss {
+		text-align: center;
+		margin: 10% auto 0 auto;
+	}
+
+	.share-info {
+		text-align: center;
+		padding: 10px 50px 10px 50px;
+		color: white;
+	}
+
+	.share-buttons {
+		padding: 45px;
+
+		button {
+			// border-radius: 5px;
+			margin-bottom: 10px;
+		}
+
+		.share-email {
+			background-color: #a7a7a7;
+		}
+
+		.share-whatsapp {
+			background-color: #01E675;
+		}
+	}
+
+	.cant-share {
+		padding: 45px 50px 45px 50px;
+		color: white;
+	}
+}

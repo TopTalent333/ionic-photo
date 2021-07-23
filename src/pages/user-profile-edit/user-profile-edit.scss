@@ -1,0 +1,73 @@
+.customer-details-header {
+    background: transparent;
+
+    &:after {        
+        background-image: none !important;
+    }
+
+    ion-navbar {
+        height: 58px;
+
+        .toolbar-background {
+            background: transparent;
+            border: none;
+        }
+    }
+
+    .header-icon {
+        height: 50px;
+    }
+
+    .header-title {
+        display: inline-block;
+        font-weight: 400;
+        font-size: 14px;
+        position: relative;
+        top: -19px;
+    }
+}
+
+.customer-details-content {
+   .scroll-content {
+       padding: 0;
+   }
+
+    .error-container {
+        padding: 10px 16px 0px 16px;
+
+        .error-box {
+            padding: 10px;
+            font-size: 12px;
+            color: white;
+            border-radius: 4px;
+            background: #cc2311;
+            display: inline-block;
+        }
+    }
+
+
+    .list-header-ios, .list-header-md {
+            background: #a91422 !important;
+            color:white;
+            text-transform: uppercase;
+            font-weight: 500;
+            font-size: 12px;
+    }
+    
+    .list-md .item-input.ng-valid.input-has-value:not(.input-has-focus) {
+        border-color: #d3d3d3;
+        box-shadow: none;
+    }
+
+    .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus) .item-inner {
+        border-color: #d3d3d3;
+        box-shadow: none;
+    }
+}
+
+.customer-details-footer {
+    button {
+        height: 50px;
+        margin: 0;
+    }
+}

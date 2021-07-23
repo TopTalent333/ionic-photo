@@ -1,0 +1,100 @@
+// http://ionicframework.com/docs/v2/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+.menu {
+	ion-header {
+
+		ion-toolbar {
+			height: 125px !important;
+			color: white;
+
+			.image {
+				display: inline-block;
+				padding-left: 15px;
+				margin-top: 10px;
+				font-size: 45pt;
+
+				img {
+					height: 100px;
+				}
+			}
+
+			.text {
+				display: inline-block;
+				position: relative;
+				top: -30px;
+				padding-left: 10px;
+
+				.greeting {
+					font-weight: bold;
+					margin-bottom: 5px;
+				}
+
+				.welcome {
+					font-weight: 200;
+				}
+			}
+		}
+			
+		.toolbar-ios-secondary .toolbar-background-ios {
+			border-color: #a91422;
+		}
+
+		.credits {
+			background: #bf5059;
+			height: 75px;
+			color: white;
+			font-size: 15pt;
+			padding: 25px 32px;
+
+			ion-icon {
+				float: right;
+				position: relative;
+				top: -6px;
+				font-size: 25pt;
+			}
+		}
+	}
+
+	ion-content {
+		margin-top: 200px;
+
+		.scroll-content, .fixed-content {
+			margin-top: 0px !important;
+		}
+
+		.colored-button {
+			color: #a91422;
+
+			ion-icon {
+				position: relative;
+				top: 1px;
+				margin-right: 10px;
+			}
+		}
+	}
+
+	.content {
+
+		.list {
+			.item {
+				font-size: 10pt;
+				text-transform: uppercase;		
+			}
+		}
+	}
+}

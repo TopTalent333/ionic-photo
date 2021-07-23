@@ -1,0 +1,91 @@
+<ion-header class="customer-details-header">
+	<ion-navbar color="white" class="title-centered">
+		<ion-title>
+			<img class="header-icon" src="assets/images/icon.png">
+			<span class="header-title">Klantgegevens</span>
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding class="customer-details-content">
+	<form *ngIf="profileForm" [formGroup]="profileForm" (ngSubmit)="save()">
+		<ion-list>
+			<ion-list-header>Wijzig klantgegevens</ion-list-header>
+			<ion-item>
+				<ion-label color="primary" fixed>Aanhef *</ion-label>
+				<ion-select formControlName="title">
+					<ion-option value="dhr">De heer</ion-option>
+					<ion-option value="mvr">Mevrouw</ion-option>
+				</ion-select>
+			</ion-item>
+			<div *ngIf="profileForm.get('title').touched && !profileForm.get('title').valid" class="error-container">
+				<div *ngIf="profileForm.get('title').hasError('required')" class="error-box">Vereist</div>
+			</div>
+
+			<ion-item>
+				<ion-label color="primary" fixed>Voornaam *</ion-label>
+				<ion-input clearInput placeholder="voornaam" formControlName="firstname"></ion-input>
+			</ion-item>
+			<div *ngIf="profileForm.get('firstname').touched && !profileForm.get('firstname').valid" class="error-container">
+				<div *ngIf="profileForm.get('firstname').hasError('required')" class="error-box">Vereist</div>
+				<div *ngIf="profileForm.get('firstname').hasError('trimmedNotEmpty')" class="error-box">Mag niet alleen spaties bevatten</div>
+			</div>
+
+			<ion-item>
+				<ion-label color="primary" fixed>Achternaam *</ion-label>
+				<ion-input clearInput placeholder="achternaam" formControlName="lastname"></ion-input>
+			</ion-item>
+			<div *ngIf="profileForm.get('lastname').touched && !profileForm.get('lastname').valid" class="error-container">
+				<div *ngIf="profileForm.get('lastname').hasError('required')" class="error-box">Vereist</div>
+				<div *ngIf="profileForm.get('lastname').hasError('trimmedNotEmpty')" class="error-box">Mag niet alleen spaties bevatten</div>
+			</div>
+
+			<ion-item>
+				<ion-label color="primary" fixed>Bedrijf</ion-label>
+				<ion-input clearInput placeholder="bedrijf" formControlName="company"></ion-input>
+			</ion-item>
+
+			<ion-item>
+				<ion-label color="primary" fixed>E-mail *</ion-label>
+				<ion-input clearInput type="email" placeholder="email" formControlName="email"></ion-input>
+			</ion-item>
+			<div *ngIf="profileForm.get('email').touched && !profileForm.get('email').valid" class="error-container">
+				<div *ngIf="profileForm.get('email').hasError('required')" class="error-box">Vereist</div>
+				<div *ngIf="profileForm.get('email').hasError('trimmedNotEmpty')" class="error-box">Mag niet alleen spaties bevatten</div>
+				<div *ngIf="profileForm.get('email').hasError('emailValid')" class="error-box">Geen geldig e-mail</div>
+			</div>
+
+			<ion-list-header>Wijzig adres</ion-list-header>
+			<ion-item>
+				<ion-label color="primary" fixed>Adres *</ion-label>
+				<ion-input clearInput placeholder="straat + huisnummer" formControlName="address"></ion-input>
+			</ion-item>
+			<div *ngIf="profileForm.get('address').touched && !profileForm.get('address').valid" class="error-container">
+				<div *ngIf="profileForm.get('address').hasError('required')" class="error-box">Vereist</div>
+				<div *ngIf="profileForm.get('address').hasError('trimmedNotEmpty')" class="error-box">Mag niet alleen spaties bevatten</div>
+			</div>
+
+			<ion-item>
+				<ion-label color="primary" fixed>Postcode *</ion-label>
+				<ion-input clearInput placeholder="postcode" formControlName="zip"></ion-input>
+			</ion-item>
+			<div *ngIf="profileForm.get('zip').touched && !profileForm.get('zip').valid" class="error-container">
+				<div *ngIf="profileForm.get('zip').hasError('required')" class="error-box">Vereist</div>
+				<div *ngIf="profileForm.get('zip').hasError('trimmedNotEmpty')" class="error-box">Mag niet alleen spaties bevatten</div>
+			</div>
+
+			<ion-item>
+				<ion-label color="primary" fixed>Woonplaats *</ion-label>
+				<ion-input clearInput placeholder="woonplaats" formControlName="city"></ion-input>
+			</ion-item>
+			<div *ngIf="profileForm.get('city').touched && !profileForm.get('city').valid" class="error-container">
+				<div *ngIf="profileForm.get('city').hasError('required')" class="error-box">Vereist</div>
+				<div *ngIf="profileForm.get('city').hasError('trimmedNotEmpty')" class="error-box">Mag niet alleen spaties bevatten</div>
+			</div>
+		</ion-list>
+	</form>
+</ion-content>
+
+<ion-footer class="customer-details-footer">
+	<button ion-button full color="secondary" *ngIf="profileForm" [disabled]="!profileForm.valid" (click)="save()">Opslaan</button>
+</ion-footer>

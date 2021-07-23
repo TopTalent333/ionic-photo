@@ -1,0 +1,58 @@
+.user-profile-header {
+    background: transparent;
+
+    &:after {        
+        background-image: none !important;
+    }
+
+    ion-navbar {
+        height: 58px;
+
+        .toolbar-background {
+            background: transparent;
+            border: none;
+        }
+    }
+
+    .header-icon {
+        height: 50px;
+    }
+
+    .header-title {
+        display: inline-block;
+        font-weight: 400;
+        font-size: 14px;
+        position: relative;
+        top: -19px;
+    }
+}
+
+.user-profile-content {
+    .header {
+        height: 200px;
+        padding-top: 40px;
+    }
+
+    .not-authenticated {
+        text-align: center;
+        margin: 70% auto;
+    }
+
+    ion-item {
+        span {
+            width: 50%;
+
+            .clipboard-copy {
+                font-size: 16px;
+                margin-top: -10px;
+            }
+        }
+    }
+}
+
+.user-profile-footer {
+    button {
+        margin: 0;
+		height: 50px;
+    }
+}

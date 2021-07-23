@@ -1,0 +1,86 @@
+<ion-header class="login-header">
+    <ion-navbar>
+        <ion-buttons end>
+            <button ion-button color="white" (click)="dismiss()">
+                <ion-icon name="close"></ion-icon>
+            </button>
+        </ion-buttons>
+    </ion-navbar>
+</ion-header>
+
+<ion-content class="login-content" *ngIf="mode === 'login'">
+    <div *ngIf="!hideLogo" class="logo" [ngStyle]="{'background-image': 'url(' + loginLogo + ')'}"></div>
+    <div class="toolbar">
+        <ion-grid>
+            <ion-row>
+                <ion-col>
+                    <span (click)="register()">Geen account?</span>
+                </ion-col>
+            </ion-row>
+            <ion-row>
+                <ion-col>
+                    <span *ngIf="invalidCredentials" class="error-notifiction">Gebruikersnaam of wachtwoord onjuist</span>
+                </ion-col>
+            </ion-row>
+        </ion-grid>
+    </div>
+    <div class="inputs">
+        <div class="input-container">
+            <span class="error" *ngIf="invalidLoginUsername">* gebruikersnaam is verplicht</span>
+            <span class="icon-container" [class.invalid]="invalidLoginUsername">
+                <ion-icon name="person"></ion-icon>
+            </span>
+            <ion-input [class.invalid]="invalidLoginUsername || invalidCredentials" type="text" [(ngModel)]="loginUsername" placeholder="gebruikersnaam of email" (keypress)="loginEventHandler($event.keyCode)"></ion-input>
+        </div>
+        <br>
+        <div class="input-container">
+            <span class="error" *ngIf="invalidLoginPassword">* wachtwoord is verplicht</span>
+            <span class="icon-container" [class.invalid]="invalidLoginPassword">
+                <ion-icon name="lock"></ion-icon>
+            </span>
+            <ion-input [class.invalid]="invalidLoginPassword || invalidCredentials" type="password" [(ngModel)]="loginPassword" placeholder="wachtwoord" (keypress)="loginEventHandler($event.keyCode)"></ion-input>
+        </div>
+    </div>
+    <div class="reset-password" (click)="resetPassword()">
+        Wachtwoord vergeten?
+    </div>
+    <br>
+    <button ion-button color="secondary" (click)="login()">
+        LOG IN
+        <ion-icon name="arrow-forward"></ion-icon>
+    </button>
+</ion-content>
+
+<ion-content class="register-content" *ngIf="mode === 'register'">
+    <div *ngIf="!hideLogo" class="logo" [ngStyle]="{'background-image': 'url(' + loginLogo + ')'}"></div>
+    <div class="inputs">
+        <div class="input-container">
+            <span class="icon-container" [class.invalid]="invalidRegisterUsername">
+                <ion-icon name="person"></ion-icon>
+            </span>
+            <ion-input [class.invalid]="invalidRegisterUsername" type="text" [(ngModel)]="registerUsername" placeholder="gebruikersnaam" (keypress)="registerEventHandler($event.keyCode)"></ion-input>
+        </div>
+        <span class="error" *ngIf="invalidRegisterUsername">* gebruikersnaam is verplicht</span>
+        <br>
+        <div class="input-container">
+            <span class="icon-container" [class.invalid]="invalidRegisterEmail">
+                <ion-icon name="person"></ion-icon>
+            </span>
+            <ion-input [class.invalid]="invalidRegisterEmail" type="text" [(ngModel)]="registerEmail" placeholder="email" (keypress)="registerEventHandler($event.keyCode)"></ion-input>
+        </div>
+        <span class="error" *ngIf="invalidRegisterEmail">* email is verplicht</span>
+        <br>
+        <div class="input-container">
+            <span class="icon-container" [class.invalid]="invalidRegisterPassword">
+                <ion-icon name="lock"></ion-icon>
+            </span>
+            <ion-input [class.invalid]="invalidRegisterPassword" type="password" [(ngModel)]="registerPassword" placeholder="wachtwoord" (keypress)="registerEventHandler($event.keyCode)"></ion-input>
+        </div>
+        <span class="error" *ngIf="invalidRegisterPassword">* wachtwoord is verplicht</span>
+    </div>
+    <br>
+    <button ion-button color="secondary" (click)="register()">
+        REGISTREER
+        <ion-icon name="arrow-forward"></ion-icon>
+    </button>
+</ion-content>

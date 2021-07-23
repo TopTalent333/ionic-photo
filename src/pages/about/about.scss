@@ -1,0 +1,46 @@
+.about-header {
+    background: transparent;
+
+    &:after {        
+        background-image: none !important;
+    }
+
+    ion-navbar {
+        height: 58px;
+        box-shadow: -8px -4px 39px 30px #FFFFFF;
+        -webkit-box-shadow: -8px -4px 39px 30px #FFFFFF;
+        -moz-box-shadow: -8px -4px 39px 30px #FFFFFF;
+
+        .toolbar-background {
+            background: transparent;
+            border: none;
+        }
+    }
+
+    .header-icon {
+        height: 50px;
+    }
+
+    .header-title {
+        display: inline-block;
+        font-weight: 400;
+        font-size: 14px;
+        position: relative;
+        top: -19px;
+    }
+}
+
+.about-content {
+    a {
+        color: #a91422;
+        text-decoration: underline;
+    }
+}
+
+.about-footer {
+    text-align: center;
+
+    ion-list { 
+        margin: 0;
+    }
+}

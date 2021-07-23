@@ -1,0 +1,46 @@
+<ion-header class="sales-header">
+	<ion-navbar color="white" class="title-centered">
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>
+			<img class="header-icon" src="assets/images/icon.png">
+			<span class="header-title">Acties en kortingen</span>
+		</ion-title>
+		<ion-buttons end>
+			<button ion-button icon-only (click)="navigateToCart()"><ion-icon name="md-cart"></ion-icon><ion-badge *ngIf="cartService.getOrderlines().length > 0" color="secondary">{{ cartService.getOrderlines().length }}</ion-badge></button>
+		</ion-buttons>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="sales-content">
+	<img src="assets/images/sales-image.jpg" alt="Sales image not found" />
+	<div class="sales-summary">
+		<div class="sales-title">
+			<h3>Acties en kortingen</h3>
+		</div>
+		<div class="sales-description">
+			Hier vind je een overzicht van alle lopende acties en kortingen.
+		</div>
+	</div>
+	<ion-list *ngIf="authService.authenticated() && vouchers.length > 0" >
+		<button ion-item full color="secondary" *ngFor="let voucher of vouchers" (click)="selectVoucher(voucher)">
+			<span class="voucher-title">{{ voucher.code }}</span>
+			<span item-right *ngIf="voucher.discountType == discountTypes.amount">{{ utilities.formatPrice(voucher.discount) }}</span>
+			<span item-right *ngIf="voucher.discountType == discountTypes.percentage">{{ voucher.discount }}%</span>
+		</button>
+	</ion-list>
+	<div *ngIf="authService.authenticated() && vouchersLoaded && vouchers.length == 0">
+		<div class="no-sales-text">Er zijn momenteel geen acties of kortingen beschikbaar</div>
+	</div>
+	<div *ngIf="!authService.authenticated()">
+		<div class="not-authenticated-text">Registreer of log in om acties en kortingen<br>te kunnen gebruiken</div>
+	</div>
+</ion-content>
+
+<ion-footer class="sales-footer">
+	<div *ngIf="!authService.authenticated()">
+		<button ion-button full color="secondary" (click)="login()" >Login</button>
+		<button ion-button full color="primary" (click)="register()">Registreer</button>
+	</div>
+</ion-footer>

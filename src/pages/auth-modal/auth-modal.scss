@@ -1,0 +1,33 @@
+.auth-modal-header {
+    ion-toolbar .toolbar-background {
+        border-bottom: none;
+    }
+}
+
+.auth-modal-content {
+    .header {
+        height: 200px;
+        padding-top: 40px;
+    }
+
+    .button-container {
+        text-align: center;
+
+        .register-button {
+
+        }
+
+        .login-button {
+
+        }
+
+        .anonymous-button {
+            margin-top: 10px;
+        }
+    }
+}
+
+
+.md .modal-wrapper {
+    opacity: 1 !important;
+}

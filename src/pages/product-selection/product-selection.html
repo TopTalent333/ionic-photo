@@ -1,0 +1,33 @@
+<ion-header class="product-selection-header">
+	<ion-navbar color="white" class="title-centered">
+		<button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+		<ion-title>
+			<img class="header-icon" src="assets/images/icon.png">
+			<span class="header-title">Formaten</span>
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="product-selection-content">
+	<img src="{{ product.image }}" alt="Product image not found" />
+	<div class="product-summary">
+		<div class="product-title">
+			<h3>{{ product.title }}</h3>
+		</div>
+		<div class="product-description">
+			{{ product.description }}
+		</div>
+	</div>
+	<ion-list>
+		<button ion-item full *ngFor="let variation of variations" (click)="selectVariation(variation)">
+			<div class="image" [ngStyle]="{'background-image': 'url(' + variation.orientationImage  + ')'}"></div>
+			<div class="info">
+				<span class="variation-title">{{ variation.title }}</span>
+				<p class="variation-dimensions">{{ variation.height }} x {{ variation.width }}cm</p>
+			</div>
+			<span item-right>{{ util.formatPrice(variation.price) }}</span>
+		</button>
+	</ion-list>
+</ion-content>

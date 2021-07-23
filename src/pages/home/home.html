@@ -1,0 +1,31 @@
+<ion-header class="home-header">
+	<ion-navbar color="white" class="title-centered">
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>
+			<img class="header-icon" src="assets/images/icon.png">
+			<span class="header-title">Fotosimpel</span>
+		</ion-title>
+		<ion-buttons end>
+			<button ion-button icon-only (click)="navigateToCart()"><ion-icon name="md-cart"></ion-icon><ion-badge *ngIf="cart.getOrderlines().length > 0" color="secondary">{{ cart.getOrderlines().length }}</ion-badge>
+      </button>
+		</ion-buttons>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="home-content">
+	<ion-slides>
+		<ion-slide *ngFor="let image of sliderImages" [ngStyle]="{'background-image': 'url(' + image  + ')' }"></ion-slide>
+	</ion-slides>
+
+	<button ion-button full (click)="openProduct('print')" class="print-button" style="background-image: url('assets/images/foto-prints.jpg')">
+		<span class="text">Foto prints bestellen</span>
+	</button>
+	<button ion-button full (click)="openProduct('canvas')" class="canvas-button" style="background-image: url('assets/images/canvas-prints.jpg')">
+		<span class="text">Canvas prints bestellen</span>
+	</button>
+	<button ion-button full (click)="openProduct('poster')" class="canvas-button" style="background-image: url('assets/images/poster-image.jpg')">
+		<span class="text">Poster prints bestellen</span>
+	</button>
+</ion-content>

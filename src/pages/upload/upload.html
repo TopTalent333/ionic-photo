@@ -1,0 +1,49 @@
+<ion-header class="upload-header">
+	<ion-navbar hideBackButton color="white" class="title-centered">
+		<ion-title>
+			<img class="header-icon" src="assets/images/icon.png">
+			<span class="header-title">Uploaden</span>
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="upload-content">
+	<div class="header" style="background-image: url('assets/images/upload-header.jpg')"></div>
+	<div *ngIf="uploading && !finished" class="info">
+		<h3>Je bent er bijna</h3>
+		Zet je mobiele telefoon tijdens het uploaden niet uit en sluit de app niet af. Zorg ervoor dat je een stabiele internetverbinding
+		hebt. Het uploaden van de foto’s duurt enkele ogenblikken.
+	</div>
+	<div *ngIf="!uploading && !finished && !paymentFailed" class="info">
+		<h3>Uploaden mislukt</h3>
+		Er is iets fout gegaan tijdens het uploaden van de foto's, probeer het nogmaals.
+	</div>
+	<div *ngIf="!uploading && finished && !paymentFailed && !paymentSuccessful" class="info">
+		<h3>Uploaden voltooid</h3>
+		Voltooi de betaling om uw bestelling definitief te plaatsen.
+	</div>
+	<div *ngIf="!uploading && finished && paymentFailed && !paymentSuccessful" class="info">
+		<h3>Betaling mislukt</h3>
+		Probeer opnieuw de betaling af te ronden om uw bestelling definitief te plaatsen.
+	</div>
+	<div *ngIf="!uploading && finished && paymentSuccessful" class="info">
+		<h3>Betaling voltooid</h3>
+		Uw bestelling is afgerond!
+	</div>
+	<div id="progress-container" data-pct="0">
+		<svg id="svg" width="110" height="110" viewport="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg">
+			<circle r="45" cx="50" cy="50" fill="transparent" stroke-dasharray="565.48" stroke-dashoffset="0"></circle>
+			<circle id="progress-bar" r="45" cx="50" cy="50" fill="transparent" stroke-dasharray="282.75" stroke-dashoffset="0" style="stroke-dashoffset: 283px;"></circle>
+		</svg>
+	</div>
+	<div class="upload-info">
+		<h1>{{ index + 1 }} / {{total}}</h1>
+		<h3>Foto's verzonden</h3>
+	</div>
+	<div class="actions">
+		<button *ngIf="!paymentSuccessful && (uploading || finished || paymentFailed)" (click)="cancel()">Annuleren</button>
+		<button *ngIf="(!uploading && finished && !paymentSuccessful) || paymentFailed" (click)="continue()">Start betaling</button>
+		<button *ngIf="!uploading && !finished" (click)="retry()">Opnieuw uploaden</button>
+		<button *ngIf="paymentSuccessful" (click)="finish()">Gereed</button>
+	</div>
+</ion-content>

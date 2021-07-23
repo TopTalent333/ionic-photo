@@ -1,0 +1,36 @@
+<ion-header class="credit-info-modal-header">
+	<ion-navbar color="white" class="title-centered">
+		<ion-title>
+			<img class="header-icon" src="assets/images/icon.png">
+			<span class="header-title">Tegoed</span>
+		</ion-title>
+		<ion-buttons end>
+			<button ion-button (click)="dismiss()">
+				<ion-icon name="close"></ion-icon>
+			</button>
+		</ion-buttons>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="credit-info-modal-content">
+	<div class="header">
+		<div class="image" [ngStyle]="{'background-image': 'url(assets/images/member-gets-member.jpg)' }"></div>
+	</div>
+	<div class="explanation">
+		<div class="title">Vertel een vriend & verdien</div>
+		<div class="text">
+			<div class="subtitle">Nodig vrienden & familie uit en verdien allebei 5 euro fotosimpel tegoed</div>
+			Deel je referentie code met familie & vrienden en elke keer als de code wordt gebruikt krijgen ze 5 euro korting op de order
+			en jij krijgt automatisch 5 euro tegoed bijgeschreven op je Fotosimpel account.
+
+			<div class="authenticated" *ngIf="authenticated">
+				<button class="showReferralCode" (click)="showReferralCode()" ion-button color="secondary">Bekijk mijn referentie code</button>
+			</div>
+			<div class="anonymous" *ngIf="!authenticated">
+				<div>Om gebruik te maken van de referentie code moet je een fotosimpel account hebben</div>
+				<button (click)="register()" ion-button color="secondary">Registreer</button>
+				<button (click)="login()" ion-button color="secondary">Login</button>
+			</div>
+		</div>
+	</div>
+</ion-content>

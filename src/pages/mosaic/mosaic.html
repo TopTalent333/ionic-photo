@@ -1,0 +1,153 @@
+<ion-header class="mosaic-header">
+	<ion-navbar color="white" class="title-centered">
+		<button ion-button menuToggle>
+      		<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>
+			<img class="header-icon" src="assets/images/icon.png">
+			<span class="header-title">{{ selection.product.name }}</span>
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding class="mosaic-content">
+	<div class="mosaic-summary">
+		<h3>{{ selection.product.variation.title }} - {{ selection.product.variation.height }} x {{ selection.product.variation.width}}cm</h3>
+	</div>
+	<div class="preview-container">
+		<div class="portrait-24" *ngIf="portrait24">
+			<ion-card>
+				<div *ngFor="let image of selection.images; let i = index">
+					<ion-row center *ngIf="i % 4 === 0">
+						<ion-col width-25 *ngIf="i < selection.images.length">
+							<div class="image" [ngStyle]="{'background-image': 'url(' + selection.images[i].thumb  + ')'}"></div>
+						</ion-col>
+						<ion-col width-25 *ngIf="i + 1 < selection.images.length">
+							<div class="image" [ngStyle]="{'background-image': 'url(' + selection.images[i + 1].thumb  + ')'}"></div>
+						</ion-col>
+						<ion-col width-25 *ngIf="i + 2 < selection.images.length">
+							<div class="image" [ngStyle]="{'background-image': 'url(' + selection.images[i + 2].thumb  + ')'}"></div>
+						</ion-col>
+						<ion-col width-25 *ngIf="i + 3 < selection.images.length">
+							<div class="image" [ngStyle]="{'background-image': 'url(' + selection.images[i + 3].thumb  + ')'}"></div>
+						</ion-col>
+					</ion-row>
+				</div>
+			</ion-card>
+		</div>
+		<div class="landscape-24" *ngIf="landscape24">
+			<ion-card>
+				<div *ngFor="let image of selection.images; let i = index">
+					<ion-row center *ngIf="i % 6 === 0">
+						<ion-col width-16 *ngIf="i < selection.images.length">
+							<div class="image" [ngStyle]="{'background-image': 'url(' + selection.images[i].thumb  + ')'}"></div>
+						</ion-col>
+						<ion-col width-16 *ngIf="i + 1 < selection.images.length">
+							<div class="image" [ngStyle]="{'background-image': 'url(' + selection.images[i + 1].thumb  + ')'}"></div>
+						</ion-col>
+						<ion-col width-16 *ngIf="i + 2 < selection.images.length">
+							<div class="image" [ngStyle]="{'background-image': 'url(' + selection.images[i + 2].thumb  + ')'}"></div>
+						</ion-col>
+						<ion-col width-16 *ngIf="i + 3 < selection.images.length">
+							<div class="image" [ngStyle]="{'background-image': 'url(' + selection.images[i + 3].thumb  + ')'}"></div>
+						</ion-col>
+						<ion-col width-16 *ngIf="i + 4 < selection.images.length">
+							<div class="image" [ngStyle]="{'background-image': 'url(' + selection.images[i + 4].thumb  + ')'}"></div>
+						</ion-col>
+						<ion-col width-16 *ngIf="i + 5 < selection.images.length">
+							<div class="image" [ngStyle]="{'background-image': 'url(' + selection.images[i + 5].thumb  + ')'}"></div>
+						</ion-col>
+					</ion-row>
+				</div>
+			</ion-card>
+		</div>
+		<div class="portrait-35" *ngIf="portrait35">
+			<ion-card>
+				<div *ngFor="let image of selection.images; let i = index">
+					<ion-row center *ngIf="i % 5 === 0">
+						<ion-col width-16 *ngIf="i < selection.images.length">
+							<div class="image" [ngStyle]="{'background-image': 'url(' + selection.images[i].thumb  + ')'}"></div>
+						</ion-col>
+						<ion-col width-16 *ngIf="i + 1 < selection.images.length">
+							<div class="image" [ngStyle]="{'background-image': 'url(' + selection.images[i + 1].thumb  + ')'}"></div>
+						</ion-col>
+						<ion-col width-16 *ngIf="i + 2 < selection.images.length">
+							<div class="image" [ngStyle]="{'background-image': 'url(' + selection.images[i + 2].thumb  + ')'}"></div>
+						</ion-col>
+						<ion-col width-16 *ngIf="i + 3 < selection.images.length">
+							<div class="image" [ngStyle]="{'background-image': 'url(' + selection.images[i + 3].thumb  + ')'}"></div>
+						</ion-col>
+						<ion-col width-16 *ngIf="i + 4 < selection.images.length">
+							<div class="image" [ngStyle]="{'background-image': 'url(' + selection.images[i + 4].thumb  + ')'}"></div>
+						</ion-col>
+					</ion-row>
+				</div>
+			</ion-card>
+		</div>
+		<div class="landscape-35" *ngIf="landscape35">
+			<ion-card>
+				<div *ngFor="let image of selection.images; let i = index">
+					<ion-row center *ngIf="i % 7 === 0">
+						<ion-col width-16 *ngIf="i < selection.images.length">
+							<div class="image" [ngStyle]="{'background-image': 'url(' + selection.images[i].thumb  + ')'}"></div>
+						</ion-col>
+						<ion-col width-16 *ngIf="i + 1 < selection.images.length">
+							<div class="image" [ngStyle]="{'background-image': 'url(' + selection.images[i + 1].thumb  + ')'}"></div>
+						</ion-col>
+						<ion-col width-16 *ngIf="i + 2 < selection.images.length">
+							<div class="image" [ngStyle]="{'background-image': 'url(' + selection.images[i + 2].thumb  + ')'}"></div>
+						</ion-col>
+						<ion-col width-16 *ngIf="i + 3 < selection.images.length">
+							<div class="image" [ngStyle]="{'background-image': 'url(' + selection.images[i + 3].thumb  + ')'}"></div>
+						</ion-col>
+						<ion-col width-16 *ngIf="i + 4 < selection.images.length">
+							<div class="image" [ngStyle]="{'background-image': 'url(' + selection.images[i + 4].thumb  + ')'}"></div>
+						</ion-col>
+						<ion-col width-16 *ngIf="i + 5 < selection.images.length">
+							<div class="image" [ngStyle]="{'background-image': 'url(' + selection.images[i + 5].thumb  + ')'}"></div>
+						</ion-col>
+						<ion-col width-16 *ngIf="i + 6 < selection.images.length">
+							<div class="image" [ngStyle]="{'background-image': 'url(' + selection.images[i + 6].thumb  + ')'}"></div>
+						</ion-col>
+					</ion-row>
+				</div>
+			</ion-card>
+		</div>
+		<small>Pas hieronder de volgorde aan</small>
+	</div>
+	<ion-card class="quantity-container" *ngIf="remainingImages == 0">
+		<button ion-button clear color="dark" [disabled]="quantity === 1" (click)="decreaseQuantity()">
+			<ion-icon name="remove"></ion-icon>
+		</button>
+		<span class="quantity">{{ quantity }}</span>
+		<button ion-button clear color="dark" (click)="increaseQuantity()">
+			<ion-icon name="add"></ion-icon>
+		</button>
+	</ion-card>
+	<ion-card class="warning">
+		<div>
+			Je hebt op het moment {{currentAmountImages}} van de vereiste {{minImages}} afbeeldingen geselecteerd.
+		</div>
+		<button ion-button full color="secondary" (click)="selectRemainingImages()">Afbeeldingen selecteren</button>
+	</ion-card>
+	<ion-card class="items-container" *ngIf="selection.images.length > 0">
+		<ion-list reorder="true" class="items" (ionItemReorder)="reorderItems($event)">
+			<ion-item class="image" *ngFor="let image of selection.images; let i = index">
+				<div item-left class="background" [ngStyle]="{'background-image': 'url(' + image.thumb  + ')' }"></div>
+				<div item-left class="index">
+					<ion-label class="text">Nummer</ion-label>
+					<span class="number">{{i + 1}}</span>
+				</div>
+				<div item-right>
+					<button ion-button clear icon-only item-right color="primary" (tap)="delete(image, i)">
+						<ion-icon name="trash"></ion-icon>
+					</button>
+				</div>
+			</ion-item>
+		</ion-list>
+	</ion-card>
+</ion-content>
+<ion-footer class="mosaic-footer">
+	<button ion-button full color="secondary" *ngIf="selection.operation === operationEnum.create" (click)="addToCart()">Voeg toe</button>
+	<button ion-button full color="secondary" *ngIf="selection.operation === operationEnum.edit" (click)="saveEdit()">Opslaan</button>
+</ion-footer>

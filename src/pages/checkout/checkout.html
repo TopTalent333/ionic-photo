@@ -1,0 +1,108 @@
+<ion-header class="checkout-header">
+	<ion-navbar color="white" class="title-centered">
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>
+			<img class="header-icon" src="assets/images/icon.png">
+			<span class="header-title">Checkout</span>
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="checkout-content">
+	<ion-list>
+		<ion-list-header>Besteloverzicht</ion-list-header>
+		<ion-item class="overview">
+			<table class="order-summary">
+				<thead>
+					<tr>
+						<th class="name" width="25%">Bestelling</th>
+						<th class="format" width="25%">Formaat</th>
+						<th class="amount" width="25%">Aantal</th>
+						<th class="price" width="25%">Prijs</th>
+					</tr>
+				</thead>
+				<tbody class="type" *ngFor="let type of types">
+					<tr *ngFor="let variation of type.variations">
+						<td class="name">{{translate(type.name)}}</td>
+						<td class="format">{{variation.height}}x{{variation.width}}</td>
+						<td class="amount">{{variation.amount}}</td>
+						<td class="price">{{util.formatPrice(variation.totalPrice)}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</ion-item>
+		<ion-item>
+			<ion-label color="primary">Subtotaal</ion-label><span item-right>{{ util.formatPrice(subtotal) }}</span>
+		</ion-item>
+	</ion-list>
+	<ion-list>
+		<ion-list-header>Korting</ion-list-header>
+		<button class="voucher" *ngIf="authService.authenticated()" (click)="showVoucherPrompt()" ion-item>Voucher- of referentiecode invoeren</button>
+		<ion-item class="code" *ngIf="voucher && authService.authenticated()">
+			<ion-label color="primary">Huidige code</ion-label>
+			<span item-right>{{voucher.code}} 
+				<button class="delete" (click)="removeCurrentVoucher()">
+					<ion-icon ios="ios-trash" md="md-trash"></ion-icon>
+				</button>
+			</span>
+		</ion-item>
+		<ion-item *ngIf="!authService.authenticated()" class="voucher-notice">
+			<div>
+				Gebruik maken van kortingcodes? <a (click)="login()">Login</a> of registreer <a (click)="register()">hier.</a>
+			</div>
+		</ion-item>
+		<!--<ion-item class="credits" *ngIf="userProfile">
+			<ion-label color="primary">Huidige credits {{availableCredits}}</ion-label>
+			<span item-right>
+				<button ion-button clear color="dark" [disabled]="usedCredits.credits == 0" (click)="decreaseUsedCredits()">
+					<ion-icon name="remove"></ion-icon>
+				</button>
+				<span class="quantity">{{ usedCredits }}</span>
+			<button ion-button clear color="dark" (click)="increaseUsedCredits()">
+					<ion-icon name="add"></ion-icon>
+				</button>
+			</span>
+			Add notice for users that credits are deducted when the order is PAID
+		</ion-item>-->
+	</ion-list>
+	<ion-list>
+		<ion-list-header>Totaal</ion-list-header>
+		<ion-item>
+			<ion-label>Verzendkosten <span ion-text class="delivery-time" color="primary">(Levertijd 1-2 werkdagen)</span></ion-label>
+			<div item-right>
+				<span class="shippingcosts" [class.strikethrough]="freeShipping" item-right>{{ util.formatPrice(shippingcosts) }}</span>
+			</div>
+		</ion-item>
+		<ion-item class="total-price">
+			<ion-label>Totaal</ion-label>
+			<div item-right *ngIf="!voucher && usedCredits == 0">
+				<span>{{ util.formatPrice(total) }}</span>
+			</div>
+			<div item-right *ngIf="voucher || usedCredits > 0">
+				<span class="before">{{ util.formatPrice(totalWithoutDiscount) }}</span>
+				<span [class.discount]="voucher || usedCredits > 0">{{util.formatPrice(totalWithDiscount)}}</span>
+			</div>
+		</ion-item>
+		<div class="credit-info" *ngIf="usedCredits > 0">
+			<div>Wij hebben automatisch {{util.formatPrice(usedCredits)}} van je beschikbare tegoed {{util.formatPrice(availableCredits)}}
+				als korting berekend</div>
+		</div>
+	</ion-list>
+	<ion-list>
+		<ion-list-header>Klantgegevens</ion-list-header>
+		<button class="edit" ion-item (click)="editUserProfile()">
+			<span *ngIf="showUserData">
+				{{userProfile.title}} {{userProfile.lastname}} <br>
+				{{userProfile.address}} <br>
+				{{userProfile.zip}}, {{userProfile.city}}
+			</span>
+			<span *ngIf="!showUserData">Klik hier om je gegevens in te vullen</span>
+		</button>
+	</ion-list>
+</ion-content>
+
+<ion-footer class="checkout-footer">
+	<button ion-button full [disabled]="disableSendButton" (click)="submit()">Verzenden</button>
+</ion-footer>

@@ -1,0 +1,86 @@
+.credit-info-modal-header {
+    background: transparent;
+
+    &:after {        
+        background-image: none !important;
+    }
+
+    ion-navbar {
+        height: 58px;
+        box-shadow: -8px -4px 39px 30px #FFFFFF;
+        -webkit-box-shadow: -8px -4px 39px 30px #FFFFFF;
+        -moz-box-shadow: -8px -4px 39px 30px #FFFFFF;
+
+        .toolbar-background {
+            background: transparent;
+            border: none;
+        }
+    }
+
+    .header-icon {
+        height: 50px;
+    }
+
+    .header-title {
+        display: inline-block;
+        font-weight: 400;
+        font-size: 14px;
+        position: relative;
+        top: -19px;
+    }
+}
+
+.credit-info-modal-content {
+
+    .header {
+		.image {
+        	height: 150px;
+			background-size: cover;
+			background-position: center center;
+		}
+    }
+
+	.explanation {
+		padding: 20px;
+			text-align: center;
+
+		.title {
+			margin: 0;
+			color: #a91422;
+			text-transform: uppercase;
+			font-weight: 500;
+			font-size: 15pt;
+			padding: 10px 0 0 0;
+		}
+
+		.subtitle {
+			font-weight: bold;
+			font-size: 9pt;
+			margin: 10px 0 50px;
+		}
+
+		.anonymous {
+			margin-top: 50px;
+			text-align: center;
+
+			button {
+				margin-top: 20px;
+				width: 45%;
+			}
+		}
+
+		.authenticated{
+			margin-top: 50px;
+			text-align: center;
+
+			button {
+				margin-top: 20px;
+				width: 100%;
+			}
+		}
+
+		.showReferralCode {
+			margin-top: 50px;
+		}
+	}
+}

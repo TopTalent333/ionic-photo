@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "306139580689",
+    "firebase_url": "https://fotosimpel-32edd.firebaseio.com",
+    "project_id": "fotosimpel-32edd",
+    "storage_bucket": "fotosimpel-32edd.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:306139580689:android:63cbfe0ffab76ed0",
+        "android_client_info": {
+          "package_name": "com.provalue.fotosimpel"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "306139580689-06t1cpki9e1ug46s47cidi86tnd0ic4n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAtwwMf0UYYJJsQpolQgFMezO1FtWa6lTY"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

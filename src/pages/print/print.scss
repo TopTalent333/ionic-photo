@@ -1,0 +1,121 @@
+.print-header {
+    background: transparent;
+
+    &:after {        
+        background-image: none !important;
+    }
+
+    ion-navbar {
+        height: 58px;
+        box-shadow: -8px -4px 39px 30px #FFFFFF;
+        -webkit-box-shadow: -8px -4px 39px 30px #FFFFFF;
+        -moz-box-shadow: -8px -4px 39px 30px #FFFFFF;
+
+        .toolbar-background {
+            background: transparent;
+            border: none;
+        }
+    }
+
+    .header-icon {
+        height: 50px;
+    }
+
+    .header-title {
+        display: inline-block;
+        font-weight: 400;
+        font-size: 14px;
+        position: relative;
+        top: -19px;
+    }
+}
+
+.print-content {
+
+    .print-summary {
+        padding: 12px;
+
+        h3 {
+            margin: 0;
+            color: #a91422;
+            text-transform: uppercase;
+            font-size: 10pt;
+        }
+    }
+
+    .list {
+        padding: 0 11px;
+
+        .list-header {
+            padding-left: 0px;
+        }
+    }
+
+    .image-container {
+
+        .image-item {
+            &.landscape {
+                padding: 0 0;
+            }            
+
+            &.portrait {
+                padding: 0 8%;
+            }
+
+            &.square {
+                padding: 0 0;
+            }
+    
+            ion-card {
+                margin: 10px 12px 40px 12px;
+                padding: 10px;
+
+                .image {
+                    background-position: center center;
+                    background-size: cover;
+                    margin: 0 auto;
+
+                    &.landscape {
+                        height: 55vw;
+                    }            
+
+                    &.portrait {
+                        height: 80vw;
+                        width: 60vw;
+                    }
+
+                    &.square {
+                        height: 75vw;
+                        width: 75vw;
+                    }
+                }
+
+                ion-card-content {
+                    text-align: center;
+                    padding: 0;
+
+                    span.quantity {
+                        font-size: 20px;  
+                        top: 6px;
+                        position: relative;
+                    }
+
+                    button {
+                        padding: 0 0.8em;
+
+                        ion-icon {
+                            font-size: 30px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.print-footer {
+    button {
+        margin: 0;
+		height: 50px;
+    }
+}

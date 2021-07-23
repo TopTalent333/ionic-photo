@@ -1,0 +1,60 @@
+.contact-header {
+    background: transparent;
+
+    &:after {        
+        background-image: none !important;
+    }
+
+    ion-navbar {
+        height: 58px;
+
+        .toolbar-background {
+            background: transparent;
+            border: none;
+        }
+    }
+
+    .header-icon {
+        height: 50px;
+    }
+
+    .header-title {
+        display: inline-block;
+        font-weight: 400;
+        font-size: 14px;
+        position: relative;
+        top: -19px;
+    }
+}
+
+.contact-content {
+     p {  
+        padding: 0 20px;
+
+        a {
+            color: #a91422;
+            text-decoration: underline;
+        }
+     }
+}
+
+.contact-footer {
+    position: absolute;
+    bottom: 0;
+
+    ion-list {
+        margin: 0 !important;
+
+        ion-icon {
+            font-size: 25px;
+            width: 25px;
+            margin-right: 20px;
+            color: #a91422;
+        }
+
+        a {
+            position: relative;
+            top: -4px;
+        }
+    }
+}

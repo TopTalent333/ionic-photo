@@ -1,0 +1,140 @@
+// Ionic Variables and Theming. For more info, please see:
+// http://ionicframework.com/docs/theming/
+
+// Font path is used to include ionicons,
+// roboto, and noto sans fonts
+$font-path: "../assets/fonts";
+
+
+// The app direction is used to include
+// rtl styles in your app. For more info, please see:
+// http://ionicframework.com/docs/theming/rtl-support/
+$app-direction: ltr;
+
+
+@import "ionic.globals";
+
+
+// Shared Variables
+// --------------------------------------------------
+// To customize the look and feel of this app, you can override
+// the Sass variables found in Ionic's source scss files.
+// To view all the possible Ionic variables, see:
+// http://ionicframework.com/docs/theming/overriding-ionic-variables/
+
+$text-color:        #000;
+$background-color:  #fff;
+
+// Start Auth0 Lock styling
+.auth0-lock-header-bg-solid {
+  background-color: white !important;
+}
+
+.auth0-lock-header-logo {
+  margin-top: 50px !important;
+}
+
+.auth0-lock.auth0-lock .auth0-lock-header {
+    height: 200px !important;
+}
+
+@media screen and (max-width: 480px) {
+    .auth0-lock.auth0-lock.auth0-lock-opened.auth0-lock-with-tabs .auth0-lock-body-content {
+        min-height: calc(100vh - 310px) !important;
+    }
+
+    .auth0-lock.auth0-lock.auth0-lock-opened .auth0-lock-body-content {
+        min-height: calc(100vh - 270px) !important;
+    }
+
+    .auth0-lock.auth0-lock.auth0-lock-opened.auth0-lock-no-submit .auth0-lock-body-content {
+        min-height: calc(100vh - 200px) !important;
+    }
+}
+// End Auth0 Lock styling
+
+.toast-wrapper {
+  background-color: #a7a7a7 !important;
+}
+
+// Named Color Variables
+// --------------------------------------------------
+// Named colors makes it easy to reuse colors on various components.
+// It's highly recommended to change the default colors
+// to match your app's branding. Ionic uses a Sass map of
+// colors so you can add, rename and remove colors as needed.
+// The "primary" color is the only required color in the map.
+
+$colors: (
+  primary:    #a7a7a7,
+  secondary:  #a91422,
+  danger:     #f53d3d,
+  light:      #f4f4f4,
+  dark:       #222,
+  white:      #FFF
+);
+
+
+// App iOS Variables
+// --------------------------------------------------
+// iOS only Sass variables can go here
+
+
+
+
+// App Material Design Variables
+// --------------------------------------------------
+// Material Design only Sass variables can go here
+
+.title-centered .toolbar-content {
+  order: 4;
+  // Make sure the toolbar buttons are above the title or they can't be tapped!
+  z-index: -1;
+}
+
+.title-centered ion-title {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 0 50px 1px;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.title-centered .toolbar-title {
+  text-align: center;
+  padding: 0;
+}
+
+
+// App Windows Variables
+// --------------------------------------------------
+// Windows only Sass variables can go here
+
+
+
+
+// App Theme
+// --------------------------------------------------
+// Ionic apps can have different themes applied, which can
+// then be future customized. This import comes last
+// so that the above variables are used and Ionic's
+// default are overridden.
+
+@import "ionic.theme.default";
+
+
+// Ionicons
+// --------------------------------------------------
+// The premium icon font for Ionic. For more info, please see:
+// http://ionicframework.com/docs/ionicons/
+
+@import "ionic.ionicons";
+
+
+// Fonts
+// --------------------------------------------------
+$ionicons-font-path: "../assets/fonts";
+@import "roboto";
+@import "noto-sans";

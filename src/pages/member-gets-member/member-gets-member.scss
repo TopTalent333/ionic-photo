@@ -1,0 +1,81 @@
+.member-gets-member-header {
+    background: transparent;
+
+    &:after {        
+        background-image: none !important;
+    }
+
+    ion-navbar {
+        height: 58px;
+        box-shadow: -8px -4px 39px 30px #FFFFFF;
+        -webkit-box-shadow: -8px -4px 39px 30px #FFFFFF;
+        -moz-box-shadow: -8px -4px 39px 30px #FFFFFF;
+
+        .toolbar-background {
+            background: transparent;
+            border: none;
+        }
+    }
+
+    .header-icon {
+        height: 50px;
+        position: relative;
+		left: 2px;
+    }
+
+    .header-title {
+        display: inline-block;
+        font-weight: 400;
+        font-size: 14px;
+        position: relative;
+        top: -19px;
+    }
+}
+
+.member-gets-member-content {
+    .header {
+		.image {
+        	height: 150px;
+			background-size: cover;
+			background-position: center center;
+		}
+    }
+
+	.slogan {
+		background: #a91422;
+		height: 75px;
+		color: white;
+		font-size: 15pt;
+		padding: 25px 32px;
+		text-align: center;
+	}
+
+	.text {
+		text-align: center;
+		padding: 20px 20px;
+	}
+
+	.code-container {		
+		text-align: center;
+		font-weight: bold;
+
+		.code {
+			margin-top: 10px;
+			font-size: 30pt;
+			color: #a91422;
+		}
+
+        .share {
+            padding-top: 10px;
+
+            .share-button-container {
+                padding: 10px 20px 10px 20px;
+
+                .share-button {
+                    margin: 10px auto;
+                    display: block;
+                }
+            }
+        }
+    }
+}

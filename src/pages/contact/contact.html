@@ -1,0 +1,41 @@
+<ion-header class="contact-header">
+  <ion-navbar color="white" class="title-centered">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>
+      <img class="header-icon" src="assets/images/icon.png">
+      <span class="header-title">Contact</span>
+    </ion-title>
+    <ion-buttons end *ngIf="cart.getOrderlines().length > 0">
+      <button ion-button icon-only (click)="navigateToCart()"><ion-icon name="md-cart"></ion-icon><ion-badge color="secondary">{{ cart.getOrderlines().length }}</ion-badge>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="contact-content">
+  <p>
+    Fotosimpel is ontwikkeld om met zo weinig mogelijk handelingen een bestelling te plaatsen. Bewerk je favoriete foto's met
+    Instagram en druk ze af met de Fotosimpel app. <br><br> We hebben de meest gestelde vragen <a (click)="openUrl('http://www.sprintphoto.nl/fotoservice/fotosimpel-app/vraag-en-antwoord/')">hier</a>    voor je op een rijtje gezet. Heb je toch nog een vraag of opmerking? Stel ze gerust. Dit kan via onze <a (click)="openUrl('https://www.facebook.com/Fotosimpel')">Facebook pagina</a>    of stuur een e-mail naar info@fotosimpel.nl
+  </p>
+</ion-content>
+
+<ion-footer class="contact-footer">
+  <ion-toolbar>
+    <ion-list>
+      <ion-list-header (click)="openUrl('https://www.facebook.com/Fotosimpel')">
+        <ion-icon name="logo-facebook" md="logo-facebook"></ion-icon>
+        <a>Volg ons op facebook</a>
+      </ion-list-header>
+      <!--<ion-list-header>
+        <ion-icon ios="logo-twitter" md="logo-twitter"></ion-icon>
+        <a href="https://twitter.com">Volg ons op twitter</a>
+      </ion-list-header>
+      <ion-list-header>
+        <ion-icon ios="logo-instagram" md="logo-instagram"></ion-icon>
+        <a href="https://instagram.com">Volg ons op instagram</a>
+      </ion-list-header>-->
+    </ion-list>
+  </ion-toolbar>
+</ion-footer>

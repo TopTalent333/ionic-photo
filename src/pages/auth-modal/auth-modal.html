@@ -1,0 +1,26 @@
+<ion-header class="auth-modal-header">
+	<ion-toolbar color="white">
+		<ion-buttons end>
+			<button ion-button (click)="dismiss()">
+				<ion-icon name="close"></ion-icon>
+			</button>
+		</ion-buttons>
+	</ion-toolbar>
+</ion-header>
+
+<ion-content padding class="auth-modal-content">
+	<div class="header"></div>
+	<div class="button-container">
+		<ion-row>
+			<ion-col width-50>
+				<button ion-button full (click)="register()" class="register-button" color="primary">Registreer</button>
+			</ion-col>
+			<ion-col width-50>
+				<button ion-button full (click)="login()" class="login-button" color="secondary">Login</button>
+			</ion-col>
+		</ion-row>
+		<div class="anonymous-button">
+			<a ion-text (click)="anonymous()" color="primary">Nee, bedankt</a>
+		</div>
+	</div>
+</ion-content>

@@ -1,0 +1,37 @@
+<ion-header class="member-gets-member-header">
+	<ion-navbar color="white" class="title-centered">
+		<ion-title>
+			<img class="header-icon" src="assets/images/icon.png">
+			<span class="header-title"></span>
+		</ion-title>
+		<ion-buttons end>
+			<button ion-button (click)="dismiss()">
+				<ion-icon name="close"></ion-icon>
+			</button>
+		</ion-buttons>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="member-gets-member-content">
+	<div class="header">
+		<div class="image" [ngStyle]="{'background-image': 'url(assets/images/member-gets-member.jpg)' }"></div>
+	</div>
+	<div class="slogan">
+		<span>Vertel een vriend & verdien</span>
+	</div>
+	<div class="text">
+		Geef je vrienden 5 euro voor hun eerste aankoop en ontvang zelf automatisch 5 euro tegoed wanneer ze hun order gemaakt hebben!
+	</div>
+	<div class="code-container">
+		Klik op je code om deze te kopiëren <br>
+		<div class="code" (click)="copyToClipboard(userProfile.referralCode)">
+			{{userProfile?.referralCode}}
+		</div>
+		<div *ngIf="canShare" class="share">
+			Of
+			<div class="share-button-container">
+				<button ion-button block color="secondary" icon-right (click)="shareModal()" class="share-button">Deel code <ion-icon name="send"></ion-icon></button>
+			</div>
+		</div>
+	</div>
+</ion-content>

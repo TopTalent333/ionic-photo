@@ -1,0 +1,73 @@
+<ion-header class="user-profile-header">
+	<ion-navbar color="white" class="title-centered">
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>
+			<img class="header-icon" src="assets/images/icon.png">
+			<span class="header-title">Jouw profiel</span>
+		</ion-title>
+		<ion-buttons end *ngIf="cartService.getOrderlines().length > 0">
+			<button ion-button icon-only (click)="navigateToCart()"><ion-icon name="md-cart"></ion-icon><ion-badge color="secondary">{{ cartService.getOrderlines().length }}</ion-badge>
+      </button>
+		</ion-buttons>
+	</ion-navbar>
+</ion-header>
+
+<ion-content class="user-profile-content">
+	<ion-list *ngIf="(authService.loggedIn && userProfile)">
+		<ion-item>
+			<ion-label color="primary" fixed>Aanhef</ion-label>
+			<span item-right>{{ userProfile.title }}</span>
+		</ion-item>
+		<ion-item>
+			<ion-label color="primary" fixed>Voornaam</ion-label>
+			<span item-right>{{ userProfile.firstname }}</span>
+		</ion-item>
+		<ion-item>
+			<ion-label color="primary" fixed>Achternaam</ion-label>
+			<span item-right>{{ userProfile.lastname }}</span>
+		</ion-item>
+		<ion-item>
+			<ion-label color="primary" fixed>Bedrijf</ion-label>
+			<span item-right>{{ userProfile.company }}</span>
+		</ion-item>
+		<ion-item>
+			<ion-label color="primary" fixed>E-mail</ion-label>
+			<span item-right>{{ userProfile.email }}</span>
+		</ion-item>
+		<ion-item>
+			<ion-label color="primary" fixed>Adres</ion-label>
+			<span item-right>{{ userProfile.address }}</span>
+		</ion-item>
+		<ion-item>
+			<ion-label color="primary" fixed>Postcode</ion-label>
+			<span item-right>{{ userProfile.zip }}</span>
+		</ion-item>
+		<ion-item>
+			<ion-label color="primary" fixed>Woonplaats</ion-label>
+			<span item-right>{{ userProfile.city }}</span>
+		</ion-item>
+		<!--<ion-item *ngIf="authService.authenticated()">
+			<ion-label color="primary">Referentie code</ion-label>
+			<span item-right>
+				<span>{{ userProfile.referralCode }}</span>
+				<button *ngIf="userProfile.referralCode != ''" ion-button clear color="primary" (click)="copy(userProfile.referralCode)" class="clipboard-copy"><ion-icon name="clipboard"></ion-icon></button>
+			</span>
+		</ion-item>-->
+		<ion-item>
+			<ion-label color="primary">Tegoed</ion-label>
+			<span item-right>{{ utilities.formatPrice(userProfile.credits) }}</span>
+		</ion-item>
+	</ion-list>
+	<div class="not-authenticated" *ngIf="!authService.loggedIn">
+		<span>U bent nog niet ingelogd</span>
+	</div>
+</ion-content>
+
+<ion-footer class="user-profile-footer">
+	<button ion-button full *ngIf="authService.loggedIn && userProfile" color="secondary" (click)="edit()">Wijzig</button>
+	<button ion-button full *ngIf="authService.loggedIn" color="primary" (click)="logout()">Log uit</button>
+	<button ion-button full *ngIf="!authService.loggedIn" color="secondary" (click)="login()">Log in</button>
+	<button ion-button full *ngIf="!authService.loggedIn" color="primary" (click)="register()">Registreer</button>
+</ion-footer>

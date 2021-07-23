@@ -1,0 +1,94 @@
+.prices-header {
+    background: transparent;
+
+    &:after {        
+        background-image: none !important;
+    }
+
+    ion-navbar {
+        height: 58px;
+
+        .toolbar-background {
+            background: transparent;
+            border: none;
+        }
+    }
+
+    .header-icon {
+        height: 50px;
+    }
+
+    .header-title {
+        display: inline-block;
+        font-weight: 400;
+        font-size: 14px;
+        position: relative;
+        top: -19px;
+    }
+}
+
+.prices-content {
+
+    ion-toolbar {
+
+        .toolbar-title {
+            color: white;
+        }
+        
+        .toolbar-background  {
+            background:#a91422;
+            color: white;
+        }
+    }
+    .toolbar-md {
+        height: 45px;
+        text-align: center;
+        min-height: unset;
+    }
+
+    .table-container {
+        padding: 20px;
+
+        .price {
+            text-align: right;
+        }
+
+        .format {
+            text-align: right;
+        }
+
+        .title {
+            text-align: left;
+        }
+
+        table {
+            thead {
+                tr {
+                    th {
+                        text-align: left;
+                        border-bottom: 1px black solid;
+                        padding: 10px 0;
+                    }
+                }
+            }
+
+            tbody {
+                tr {
+                    td {
+                        border-bottom: 1px black solid;
+                        padding: 10px 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .notice {
+        padding: 0 20px 20px 20px;
+
+        .disclosure {
+            font-size: 12px;
+            color: #7d7b7b;
+        }
+    }
+}
